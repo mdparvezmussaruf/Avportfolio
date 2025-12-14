@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Simple shield-like logo — replace with your own branding -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none" role="img" aria-label="Logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff5b5b"/>
+      <stop offset="1" stop-color="#ffb86b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#071018"/>
+  <path d="M32 6 L52 14 L52 32 C52 46 40 56 32 58 C24 56 12 46 12 32 L12 14 Z" fill="url(#g)" opacity="0.95"/>
+  <circle cx="32" cy="28" r="6" fill="#071018"/>
+</svg>
