@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Heroic Portfolio — Freelance Developer</title>
+  <meta name="description" content="Freelance portfolio inspired by comic-book superhero aesthetics — professional, dynamic and responsive." />
+  <link rel="icon" href="assets/logo-shield.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="theme-comic">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Home">
+        <!-- Inline SVG logo; replace with your own -->
+        <img src="assets/logo-shield.svg" alt="logo" class="logo" />
+        <span class="brand-text">Parvez — Freelance</span>
+      </a>
+
+      <nav class="nav" aria-label="Main Navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰</button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="controls">
+        <select id="theme-switcher" title="Choose look">
+          <option value="theme-comic">Comic Mode</option>
+          <option value="theme-tech">Tech Mode</option>
+          <option value="theme-classic">Classic Mode</option>
+        </select>
+        <a class="btn-primary" href="#contact">Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-content">
+        <h1 class="hero-title">Designing digital experiences with heroic impact</h1>
+        <p class="hero-sub">Freelance developer & designer — UI, web apps, motion design</p>
+        <div class="hero-ctas">
+          <a class="btn-outline" href="#portfolio">See work</a>
+          <a class="btn-primary" href="#contact">Let's talk</a>
+          <a class="ghost" href="resume.pdf" download>Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <div class="split">
+        <div>
+          <h2>About</h2>
+          <p>I build fast, accessible web apps and polished interfaces — blending cinema-grade visuals with pragmatic engineering. I work with startups, agencies, and founders to turn ideas into delightful products.</p>
+          <ul class="skills">
+            <li>UI/UX Design</li>
+            <li>React / Vue / Vanilla</li>
+            <li>Motion & animation</li>
+            <li>Performance & accessibility</li>
+          </ul>
+        </div>
+        <div class="profile-card">
+          <div class="profile-photo" aria-hidden="true"></div>
+          <h3>Parvez Mussaruf</h3>
+          <p class="muted">Freelance Full-stack Developer</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="GitHub">gh</a>
+            <a href="#" aria-label="Dribbble">db</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services container">
+      <h2>Services</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Product UI</h3>
+          <p>From concept to pixel-perfect UI with design systems and prototypes.</p>
+        </article>
+        <article class="card">
+          <h3>Interactive Web</h3>
+          <p>Performance-first web apps built with modern JS frameworks and tooling.</p>
+        </article>
+        <article class="card">
+          <h3>Motion & Branding</h3>
+          <p>Cinematic animations, hero banners and UI motion that amplify brand story.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="portfolio" class="portfolio container">
+      <h2>Portfolio</h2>
+      <div class="filter-row">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ui">UI</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="motion">Motion</button>
+      </div>
+
+      <div class="grid" id="portfolio-grid">
+        <div class="project-card" data-type="ui" tabindex="0">
+          <div class="thumb" style="background-image:linear-gradient(135deg,#ff6a6a,#ffb86b)"></div>
+          <h4>Heroic Dashboard</h4>
+          <p class="muted">Design system, components</p>
+        </div>
+
+        <div class="project-card" data-type="web" tabindex="0">
+          <div class="thumb" style="background-image:linear-gradient(135deg,#2dd4bf,#60a5fa)"></div>
+          <h4>Realtime Chat App</h4>
+          <p class="muted">Web app with realtime features</p>
+        </div>
+
+        <div class="project-card" data-type="motion" tabindex="0">
+          <div class="thumb" style="background-image:linear-gradient(135deg,#f472b6,#7c3aed)"></div>
+          <h4>Launch Animation</h4>
+          <p class="muted">Promo video and hero motion</p>
+        </div>
+
+        <div class="project-card" data-type="ui" tabindex="0">
+          <div class="thumb" style="background-image:linear-gradient(135deg,#f97316,#ef4444)"></div>
+          <h4>Mobile Commerce</h4>
+          <p class="muted">iOS/Android UI, animations</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials container">
+      <h2>Testimonials</h2>
+      <div class="quote-cards">
+        <blockquote>
+          "Delivered beyond expectations — polished visuals and fast iteration."
+          <cite>— Alex Founder, Atlas Inc.</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact" class="contact container">
+      <h2>Contact</h2>
+      <div class="split">
+        <form id="contact-form" class="contact-form" action="#" method="POST" novalidate>
+          <label>
+            <span>Your name</span>
+            <input name="name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input name="email" type="email" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Send</button>
+            <button type="button" class="btn-outline" id="clear-btn">Clear</button>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <h3>Let's build something</h3>
+          <p>Available for freelance & full-time opportunities. Open to remote and hybrid work.</p>
+          <ul>
+            <li>Email: <a href="mailto:hello@example.com">hello@example.com</a></li>
+            <li>Location: Remote</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Parvez — Crafted with heroic effort.</p>
+    </div>
+  </footer>
+
+  <!-- Modal viewer for portfolio -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close" data-close>✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
