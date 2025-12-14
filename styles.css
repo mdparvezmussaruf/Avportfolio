@@ -1,0 +1,159 @@
+:root{
+  --bg: #0b0f13;
+  --surface: #0f1720;
+  --text: #eef2ff;
+  --muted: #9aa4b2;
+  --accent: #ff3b30; /* base accent for comic theme */
+  --accent-2: #ffb84d;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 12px;
+  --container: 1100px;
+  --ease: cubic-bezier(.2,.9,.2,1);
+}
+
+/* Theme modifiers (dynamic looks) */
+.theme-comic {
+  --bg: linear-gradient(180deg,#07070a 0%, #0b0f13 60%);
+  --surface: rgba(10,10,12,0.55);
+  --text: #f7f7fb;
+  --muted: #cbd5e1;
+  --accent: #ff2d2d;
+  --accent-2: #ffb347;
+  --glow: 0 10px 30px rgba(255,45,45,0.18);
+}
+
+.theme-tech {
+  --bg: linear-gradient(180deg,#001220 0%, #071124 60%);
+  --surface: rgba(12,18,26,0.6);
+  --text: #e6f0ff;
+  --muted: #9fb6d6;
+  --accent: #37d5ff;
+  --accent-2: #9be15d;
+  --glow: 0 12px 36px rgba(55,213,255,0.14);
+}
+
+.theme-classic {
+  --bg: linear-gradient(180deg,#111216 0%, #0f1114 60%);
+  --surface: rgba(18,18,20,0.6);
+  --text: #f5f4f3;
+  --muted: #b9b7b6;
+  --accent: #ffd166;
+  --accent-2: #ef476f;
+  --glow: 0 8px 24px rgba(255,209,102,0.12);
+}
+
+/* Global layout */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:2rem;
+}
+
+/* Header */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.06));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.header-inner{
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--text)}
+.logo{width:40px;height:40px}
+.brand-text{font-weight:600;letter-spacing:.2px}
+
+/* Nav */
+.nav-list{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.nav-list a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
+.nav-list a:hover{background:var(--glass);color:var(--text)}
+
+/* Controls */
+.controls{display:flex;gap:.6rem;align-items:center}
+select, .btn-primary, .btn-outline, .ghost{
+  border-radius:8px;padding:.5rem .8rem;border:0;cursor:pointer;font-weight:600
+}
+select{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.04)}
+.btn-primary{background:var(--accent);color:#071018;box-shadow:var(--glow);transition:transform .18s var(--ease)}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
+.ghost{background:transparent;color:var(--muted)}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:6rem 0;min-height:60vh;display:flex;align-items:center}
+.hero-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.55}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.hero-title{font-size:clamp(1.8rem,4.5vw,3.6rem);margin:0 0 .6rem;font-weight:800;letter-spacing:-0.02em}
+.hero-sub{color:var(--muted);margin:0 0 1.2rem}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* Sections */
+section{padding:3rem 0}
+h2{font-size:1.6rem;margin-bottom:1rem}
+.split{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
+
+/* Profile card */
+.profile-card{background:var(--surface);padding:1.2rem;border-radius:var(--radius);box-shadow:0 8px 32px rgba(0,0,0,0.5)}
+.profile-photo{height:120px;width:120px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));margin-bottom:1rem;box-shadow:var(--glow)}
+.profile-card h3{margin:.2rem 0 .2rem}
+.muted{color:var(--muted)}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:transform .18s var(--ease)}
+.card:hover{transform:translateY(-8px)}
+
+/* Portfolio */
+.filter-row{display:flex;gap:.5rem;margin-bottom:1rem}
+.filter-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:.5rem .8rem;border-radius:8px;color:var(--muted);cursor:pointer}
+.filter-btn.active{background:var(--accent);color:#071018}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.project-card{background:var(--surface);border-radius:12px;padding:.8rem;cursor:pointer;transition:transform .18s var(--ease);outline:none}
+.project-card:focus,.project-card:hover{transform:translateY(-6px);box-shadow:var(--glow)}
+.thumb{height:140px;border-radius:10px;background-size:cover;background-position:center;margin-bottom:.6rem}
+
+/* Testimonials */
+blockquote{background:var(--surface);padding:1.2rem;border-radius:12px}
+
+/* Contact */
+.contact-form label{display:block;margin-bottom:.8rem}
+.contact-form input, .contact-form textarea{width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
+.form-actions{display:flex;gap:.6rem}
+
+/* Footer */
+.site-footer{padding:1.6rem 0;border-top:1px solid rgba(255,255,255,0.03);text-align:center;color:var(--muted)}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:60}
+.modal[aria-hidden="false"]{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.75))}
+.modal-panel{position:relative;background:var(--surface);padding:1rem;border-radius:12px;max-width:900px;width:90%;z-index:2}
+.modal-close{position:absolute;right:10px;top:10px;border:0;background:transparent;color:var(--muted);font-size:1.1rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .split{grid-template-columns:1fr}
+  .nav-list{display:none}
+  .nav-list.show{display:flex;flex-direction:column;gap:.5rem;background:transparent;padding:1rem}
+  .nav-toggle{display:inline-block}
+}
+@media (min-width:901px){
+  .nav-toggle{display:none}
+}
